@@ -1,0 +1,35 @@
+server:
+  port: 10010
+spring:
+  application:
+    name: tianlei-api-getway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10086/eureka
+    registry-fetch-interval-seconds: 5
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+    instance-id: ${spring.application.name}:${server.port}
+zuul:
+  prefix: /api
+  retryable: true
+  routes:
+    item-service: /item/**
+#  ignored-patterns: /upload/**
+  ignored-services: upload-service
+#ribbon:
+#  ConnectTimeout: 250
+#  ReadTimeout: 2000
+#  OkToRetryOnAllOperations: true
+#  MaxAutoRetriesNextServer: 1
+#  MaxAutoRetries: 1
+#
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMillisecond: 10000
