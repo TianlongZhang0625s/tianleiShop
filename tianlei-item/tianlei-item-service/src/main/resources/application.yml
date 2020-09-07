@@ -4,9 +4,10 @@ spring:
   application:
     name: item-service
   datasource:
-    url: jdbc:mysql://localhost:3306/tianleishop
+  # 数据库迁移到线上阿里云docker内
+    url: jdbc:mysql://1xx.xxx.xxx.xxx:3306/tianleishop
     username: root
-    password: woaichiyulei1314
+    password: ***************
     hikari:
       maximum-pool-size: 30
       minimum-idle: 10
