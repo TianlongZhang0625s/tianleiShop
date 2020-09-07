@@ -1,11 +1,14 @@
 server:
   port: 8082
+# 网关处理的服务类型的名称由下面的内容确定，同时限制了
+# 文件的大小为5MB
 spring:
   application:
     name: upload-service
   servlet:
     multipart:
       max-file-size: 5MB
+# 配置服务的注册中心为我们搭建的Eureka注册服务中心
 eureka:
   client:
     service-url:
