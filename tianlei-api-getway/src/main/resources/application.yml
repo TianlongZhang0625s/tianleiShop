@@ -18,6 +18,7 @@ zuul:
   routes:
     item-service: /item/**
 #  ignored-patterns: /upload/**
+#  网关不处理图片上传的请求
   ignored-services: upload-service
 #ribbon:
 #  ConnectTimeout: 250
